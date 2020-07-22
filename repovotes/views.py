@@ -3,7 +3,7 @@ from rest_framework import generics
 from repovotes.models import Repo, Voter
 from repovotes.serializers import RepoSerializer, VoterSerializer
 
-class RepoList(generics.ListAPIView):
+class RepoList(generics.ListCreateAPIView):
     queryset=Repo.objects.all()
     serializer_class=RepoSerializer
 
