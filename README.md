@@ -19,19 +19,19 @@ Endpoint | HTTP Method | CRUD Method | Result
 
 ## Models 
 
-class Repo(models.Model):
-    link = models.TextField(); 
-    name = models.TextField(); 
-    votes = models.IntegerField(); 
+    class Repo(models.Model):
+        link = models.TextField(); 
+        name = models.TextField(); 
+        votes = models.IntegerField(); 
 
-    def add_vote(self):
-        self.votes += 1
-        self.save()
+        def add_vote(self):
+            self.votes += 1
+            self.save()
 
 
-class Voter(models.Model):
-    email = models.TextField(unique=True); 
-    repovoted = models.IntegerField(); 
+    class Voter(models.Model):
+        email = models.TextField(unique=True); 
+        repovoted = models.IntegerField(); 
 
 ## Built With
 
