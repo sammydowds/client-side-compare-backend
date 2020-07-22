@@ -14,14 +14,24 @@ This is a REST API to capture voters and votes for a particular client-side fram
 
 Endpoint | HTTP Method | CRUD Method | Result
 -- | -- | -- | -- 
-`projects` | GET | READ	| Get all projects associated with user
-`projects/create`	|POST| CREATE|	Create a project
+`votes` | GET | READ	| Gives JSON of frameworks and their votes 
+`castvote`	|POST| CREATE|	Create a voter and incriment vote for framework
 
 ## Models 
 
-## File Structure 
+class Repo(models.Model):
+    link = models.TextField(); 
+    name = models.TextField(); 
+    votes = models.IntegerField(); 
 
-## Running the tests
+    def add_vote(self):
+        self.votes += 1
+        self.save()
+
+
+class Voter(models.Model):
+    email = models.TextField(unique=True); 
+    repovoted = models.IntegerField(); 
 
 ## Built With
 

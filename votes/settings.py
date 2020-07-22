@@ -55,7 +55,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000"
+    "http://localhost:3000", 
+    "https://frmwrk-compr.herokuapp.com/"
 ]
 
 ROOT_URLCONF = 'votes.urls'
